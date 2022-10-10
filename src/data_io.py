@@ -3,7 +3,7 @@ import geopandas as gpd
 from matplotlib.axes import Axes
 
 
-def construct_file_prefix_now():
+def construct_file_suffix_now():
     return datetime.now().strftime("%Y%m%d_%H%M%S")
 
 
