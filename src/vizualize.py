@@ -10,7 +10,10 @@ TITLE_TEXT_SIZE = 13
 DEFAULT_BASEMAP = cx.providers.Stamen.TonerLite
 
 
-def map_boundaries(boundaries: gpd.GeoDataFrame) -> Axes:
+def map_boundaries(
+    boundaries: gpd.GeoDataFrame,
+    name: str,
+) -> Axes:
     _, ax = plt.subplots(
         figsize=(12, 12),
     )
@@ -24,7 +27,7 @@ def map_boundaries(boundaries: gpd.GeoDataFrame) -> Axes:
     )
     ax.axes.xaxis.set_ticklabels([])
     ax.axes.yaxis.set_ticklabels([])
-    ax.set_title(f"NYC Boroughs", fontsize=TITLE_TEXT_SIZE)
+    ax.set_title(name, fontsize=TITLE_TEXT_SIZE)
     cx.add_basemap(
         ax,
         source=DEFAULT_BASEMAP,
