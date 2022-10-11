@@ -115,6 +115,8 @@ six==1.16.0
     #   python-dateutil
 snuggs==1.4.7
     # via rasterio
+tabulate==0.8.9
+    # via -r requirements.in
 tomli==2.0.1
     # via black
 typing-extensions==4.4.0
