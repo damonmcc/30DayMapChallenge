@@ -3,5 +3,6 @@ contextily==1.2.0
 geopandas==0.11.1
 matplotlib==3.5.0 # to prevent seaborn.histplot error
 pandas==1.5.0
+pytest==7.1.3
 seaborn==0.12.0
 tabulate==0.8.9
