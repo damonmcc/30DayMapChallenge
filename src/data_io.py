@@ -2,6 +2,7 @@ from datetime import datetime
 import pandas as pd
 import geopandas as gpd
 from matplotlib.axes import Axes
+from matplotlib.figure import Figure
 
 
 def construct_file_suffix_now():
@@ -51,11 +52,14 @@ def load_nyc_pluto() -> pd.DataFrame:
     return nyc_pluto
 
 
-def save_axis_to_png(
-    plot_axis: Axes,
+def save_plot_to_png(
+    plot: Axes | Figure,
     filename: str,
 ) -> None:
-    fig = plot_axis.get_figure()
+    if isinstance(plot, Axes):
+        fig = plot.get_figure()
+    else:
+        fig = plot
     fig.savefig(
         f"data/plot/{filename}",
         bbox_inches="tight",
